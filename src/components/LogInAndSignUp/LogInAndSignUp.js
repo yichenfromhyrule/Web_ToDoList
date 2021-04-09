@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
-import './LogInAndSignUp.css';
 import LogInForm from './LogInForm/LogInForm';
 import SignUpForm from './SignUpForm/SignUpForm';
+import HomePage from '../HomePage/HomePage';
 
 
 function LogInAndSignUp() {
+    const [user, setUser] = React.useState(null);
     const [showLog, setShowLog] = useState(false);
     const [showSign, setShowSign] = useState(false);
     const clickLog = () => {
@@ -38,8 +39,7 @@ function LogInAndSignUp() {
                     Sign Up
                 </div>
             </div>
-            {showLog ? <LogInForm /> : null}
-            {showSign ? <SignUpForm /> : null}
+            {user ? (<HomePage user={user} />) : (<SignUpForm onSuccess={setUser} />)}
             
         </div>
     )

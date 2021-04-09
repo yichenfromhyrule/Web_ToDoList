@@ -1,49 +1,43 @@
 import React from 'react';
 import './SignUpForm.css';
+import firebase from "firebase/app";
+import "firebase/auth";
+import "firebase/firestore";
+import "firebase/database";
 
 
-class SignUpForm extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            userEmail: '',
-            userPassword: ''
-        };
+export const SignUpForm =({ onSuccess }) => {
+    const [email, setEmail] = React.useState("");
+    const [password, setPassword] = React.useState("");
+    
+    const mySubmitHandler = async(event) => {
+        event.preventDefault();
+        const user = await firebase
+            .auth()
+            .createUserWithEmailAndPassword(email, password);
+        onSuccess(user);
+        return; 
     }
-    mySubmitHandler = (event) => {
-        alert("You are submitting"+this.state.userEmail+" password: " + this.state.userPassword);
-    }
-    myEmailHandler = (event) =>{
-        this.setState({userEmail: event.target.value});
-    }
-    myPasswordHandler = (event) =>{
-        this.setState({userPassword: event.target.value});
-    }
-    render() {
+
+        
         return (
             <div className="signFormContainer">
-                <form className="signFormForm" onSubmit={this.mySubmitHandler}>
+                <form className="signFormForm" onSubmit={mySubmitHandler}>
                     <input 
                         className="signFormInput"
                         type="text"
                         name="email"
                         placeholder="Enter Email"
-                        onChange={this.myEmailHandler}
+                        onChange={(event) => setEmail(event.target.value)}
                     />
                     <input 
                         className="signFormInput"
                         type="password"
                         name="password"
                         placeholder="Enter Password"
-                        onChange={this.myPasswordHandler}
+                        onChange={(event) => setPassword(event.target.value)}
                     />
-                    <input 
-                        className="signFormInput"
-                        type="password"
-                        name="confirmPassword"
-                        placeholder="Confirm Password"
-                        onChange={this.myPasswordHandler}
-                    />
+                    
                     <input
                         className="signFormButton"
                         type="submit"
@@ -52,7 +46,7 @@ class SignUpForm extends React.Component {
                 </form>
             </div>
         )
-    }
+    
 }
 
 export default SignUpForm
