@@ -1,7 +1,7 @@
 .logFormContainer{
     width: auto;
     height:auto;
-    background-color:rgb(255, 203, 203);
+    background-color:transparent;
     margin-right: 20px;
     margin-top: 25vh;
     position: absolute;
@@ -9,4 +9,46 @@
     display: flex;
     flex-direction: column;
     font-size: 25px;
+}
+
+.logFormForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logFormInput{
+    height: 50px;
+    width: 300px;
+    border: solid 1px #C5E7F1;
+    border-radius: 30px;
+    background-color: #C5E7F1;
+    font-size: 20px;
+    color: #6F89A2;
+    padding: 5px 10px;
+    margin: 10px 0;
+}
+
+.logFormInput::placeholder{
+    color: #79CEED;
+}
+
+.logFormButton{
+    height: 45px;
+    width: 150px;
+    border: solid 1px #6F89A2;
+    border-radius: 30px;
+    background-color: #6F89A2;
+    font-size: 20px;
+    color: white;
+    padding: 5px 10px;
+    margin: 10px 0;
+    cursor: pointer;
+    outline: none;
+}
+
+.logFormButton:hover{
+    border: solid 1px #79CEED;
+    background-color: #79CEED;
 }
