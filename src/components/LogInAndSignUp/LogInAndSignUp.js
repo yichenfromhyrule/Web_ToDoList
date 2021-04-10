@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './LogInAndSignUp.css';
 import LogInForm from './LogInForm/LogInForm';
 import SignUpForm from './SignUpForm/SignUpForm';
-import HomePage from '../HomePage/HomePage';
+import ThankForm from './ThankForm/ThankForm';
 
 
 function LogInAndSignUp() {
@@ -40,7 +40,20 @@ function LogInAndSignUp() {
                     Sign Up
                 </div>
             </div>
-            {user ? (<HomePage user={user} />) : (<SignUpForm onSuccess={setUser} />)}
+            {showLog ? (
+                <LogInForm />
+            ) : (
+                <div>
+                {showSign ? (
+                    <div>
+                        {user ? (<ThankForm />) : (<SignUpForm onSuccess={setUser} />)}
+                    </div>
+                ):(
+                    null
+                )}
+                </div>
+            )}
+            
             
         </div>
     )

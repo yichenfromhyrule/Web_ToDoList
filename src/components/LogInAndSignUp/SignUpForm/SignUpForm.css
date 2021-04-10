@@ -21,28 +21,28 @@
 .signFormInput{
     height: 50px;
     width: 300px;
-    border: solid 1px #BEF2E5;
+    border: solid 1px #6F89A2;
     border-radius: 30px;
-    background-color: #BEF2E5;
+    background-color: #6F89A2;
     font-size: 20px;
-    color: #60EFDB;
+    color: white;
     padding: 5px 10px;
     margin: 10px 0;
     outline: none;
 }
 
 .signFormInput::placeholder{
-    color: white;
+    color: #C5E7F1;
 }
 
 .signFormButton{
     height: 45px;
     width: 200px;
-    border: solid 1px #60EFDB;
+    border: solid 1px #C5E7F1;
     border-radius: 30px;
-    background-color: #60EFDB;
+    background-color: #C5E7F1;
     font-size: 20px;
-    color: white;
+    color: black;
     padding: 5px 10px;
     margin: 10px 0;
     cursor: pointer;
@@ -50,6 +50,6 @@
 }
 
 .signFormButton:hover{
-    border: solid 1px #BEF2E5;
-    background-color: #BEF2E5;
+    border: solid 1px #6F89A2;
+    background-color: #6F89A2;
 }

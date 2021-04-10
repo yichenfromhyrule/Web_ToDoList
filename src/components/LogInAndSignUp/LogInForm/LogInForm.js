@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './LogInForm.css';
 
 
@@ -37,11 +38,14 @@ class LogInForm extends React.Component {
                         placeholder="Enter Password"
                         onChange={this.myPasswordHandler}
                     />
-                    <input
-                        className="logFormButton"
-                        type="submit"
-                        value="Submit"
-                    />
+                    <Link to="/home">
+                        <input
+                            className="logFormButton"
+                            type="submit"
+                            value="Submit"
+                        />
+                    </Link>
+                    
                 </form>
             </div>
         )

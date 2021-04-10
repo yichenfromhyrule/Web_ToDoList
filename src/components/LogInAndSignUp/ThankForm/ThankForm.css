@@ -1,0 +1,28 @@
+.thankFormContainer{
+    width: auto;
+    height:auto;
+    background-color:transparent;
+    margin-right: 20px;
+    margin-top: 25vh;
+    position: absolute;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    font-size: 25px;
+}
+
+.thankFormInput{
+    width: 300px;
+    border: solid 3px #79CEED;
+    border-style: dashed;
+    border-radius: 30px;
+    background-color: white;
+    font-size: 20px;
+    color: #79CEED;
+    margin: 10px 0;
+    padding: 70px 0;
+    outline: none;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
