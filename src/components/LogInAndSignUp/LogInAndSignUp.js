@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import './LogInAndSignUp.css';
 import LogInForm from './LogInForm/LogInForm';
 import SignUpForm from './SignUpForm/SignUpForm';
 import HomePage from '../HomePage/HomePage';
