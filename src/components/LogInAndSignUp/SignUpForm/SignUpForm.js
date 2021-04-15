@@ -6,7 +6,7 @@ import "firebase/firestore";
 import "firebase/database";
 
 
-export const SignUpForm =({ onSuccess }) => {
+export const SignUpForm =({ signUpSuccess }) => {
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
     
@@ -15,7 +15,7 @@ export const SignUpForm =({ onSuccess }) => {
         const user = await firebase
             .auth()
             .createUserWithEmailAndPassword(email, password);
-        onSuccess(user);
+        signUpSuccess(user);
         return; 
     }
 

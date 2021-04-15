@@ -7,6 +7,8 @@ import ThankForm from './ThankForm/ThankForm';
 
 function LogInAndSignUp() {
     const [user, setUser] = React.useState(null);
+    const [login, setLogin] = React.useState(null);
+
     const [showLog, setShowLog] = useState(false);
     const [showSign, setShowSign] = useState(false);
     const clickLog = () => {
@@ -41,12 +43,15 @@ function LogInAndSignUp() {
                 </div>
             </div>
             {showLog ? (
-                <LogInForm />
+                <div>
+                    {login ? (<ThankForm />) : (<LogInForm logInSuccess={setLogin} />)}
+                </div>
+                
             ) : (
                 <div>
                 {showSign ? (
                     <div>
-                        {user ? (<ThankForm />) : (<SignUpForm onSuccess={setUser} />)}
+                        {user ? (<ThankForm />) : (<SignUpForm signUpSuccess={setUser} />)}
                     </div>
                 ):(
                     null
