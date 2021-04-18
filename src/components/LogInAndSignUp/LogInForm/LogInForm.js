@@ -19,15 +19,15 @@ export const LogInForm =({logInSuccess}) => {
             .then((userCredential) => {
                 // Signed in
                 var user = userCredential.user;
-                // ...
+                console.log(user);
+                window.location.href = "/home";
             })
             .catch((error) => {
                 var errorCode = error.code;
                 var errorMessage = error.message;
-                alert("You are submitting"+email+" password: " + password);
+                alert(errorCode);
             });
-        logInSuccess(login);
-        return;
+        
     }
     
     
