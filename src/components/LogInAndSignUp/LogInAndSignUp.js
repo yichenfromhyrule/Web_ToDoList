@@ -3,12 +3,12 @@ import './LogInAndSignUp.css';
 import LogInForm from './LogInForm/LogInForm';
 import SignUpForm from './SignUpForm/SignUpForm';
 import ThankForm from './ThankForm/ThankForm';
+import gintoki from './../../images/anime/gintoki.jpeg';
 
 
 function LogInAndSignUp() {
     const [user, setUser] = React.useState(null);
-    const [login, setLogin] = React.useState(null);
-
+    
     const [showLog, setShowLog] = useState(false);
     const [showSign, setShowSign] = useState(false);
     const clickLog = () => {
@@ -31,20 +31,24 @@ function LogInAndSignUp() {
     };
     return (
         <div>
-            <div className="logContainer">
-                <div className="logText" onClick={clickLog}>
+            <div className="logSignContainer">
+                <div className="logSignText" onClick={clickLog}>
                     Log In
                 </div>
-                <div className="logDivider">
+                <div className="logSignDivider">
                     |
                 </div>
-                <div className="logText" onClick={clickSign}>
+                <div className="logSignText" onClick={clickSign}>
                     Sign Up
                 </div>
             </div>
+            
             {showLog ? (
-                <div>
-                    {login ? (<ThankForm />) : (<LogInForm logInSuccess={setLogin} />)}
+                <div className="logSignMainConatiner">
+                    <div className="logSignImgContainer">
+                        <img src={gintoki}></img>
+                    </div>
+                    <LogInForm />
                 </div>
                 
             ) : (

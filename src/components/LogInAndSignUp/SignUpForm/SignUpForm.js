@@ -9,14 +9,30 @@ import "firebase/database";
 export const SignUpForm =({ signUpSuccess }) => {
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
+    var errorMsg=[];
+    var setErrorMsg = false;
     
     const mySubmitHandler = async(event) => {
-        event.preventDefault();
-        const user = await firebase
+        event.preventDefault()
+        if(password.length < 6){
+            errorMsg.push("Password should be at least 6 characters");
+            alert("Password should be at least 6 characters");
+            setErrorMsg = true;
+        }
+        firebase
             .auth()
-            .createUserWithEmailAndPassword(email, password);
-        signUpSuccess(user);
-        return; 
+            .createUserWithEmailAndPassword(email, password)
+            .then((userCredential)=>{
+                var user = userCredential.user;
+                signUpSuccess(user);
+                return; 
+            })
+            .catch((error) => {
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                console.log(errorMessage);
+            });
+        
     }
 
         
@@ -43,6 +59,11 @@ export const SignUpForm =({ signUpSuccess }) => {
                         type="submit"
                         value="Create An Account"
                     />
+                    { setErrorMsg ? (
+                        <p>dsgjfjdsj</p>
+                    ):(
+                        null
+                    )}
                 </form>
             </div>
         )

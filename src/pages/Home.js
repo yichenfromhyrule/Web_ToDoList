@@ -1,9 +1,13 @@
-import React from 'react'
+import React from 'react';
+import './../App.css';
+import LogInAndSignUp from './../components/LogInAndSignUp/LogInAndSignUp';
+import Footer from './../components/Footer/Footer';
 
 function Home() {
     return (
-        <div>
-            <h1>HOME</h1>
+        <div className="App">
+            <h1>Home</h1>
+            <Footer />
         </div>
     )
 }

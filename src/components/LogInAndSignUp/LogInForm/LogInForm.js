@@ -13,7 +13,7 @@ export const LogInForm =({logInSuccess}) => {
 
     const mySubmitHandler = async(event) => {
         event.preventDefault();
-        const login = await firebase
+        firebase
             .auth()
             .signInWithEmailAndPassword(email, password)
             .then((userCredential) => {
