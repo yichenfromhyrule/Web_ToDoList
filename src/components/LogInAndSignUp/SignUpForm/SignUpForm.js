@@ -24,6 +24,7 @@ export const SignUpForm =({ signUpSuccess }) => {
             .createUserWithEmailAndPassword(email, password)
             .then((userCredential)=>{
                 var user = userCredential.user;
+                window.location.href = "/home";
                 signUpSuccess(user);
                 return; 
             })

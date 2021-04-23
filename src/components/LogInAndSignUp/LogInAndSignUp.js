@@ -4,6 +4,7 @@ import LogInForm from './LogInForm/LogInForm';
 import SignUpForm from './SignUpForm/SignUpForm';
 import ThankForm from './ThankForm/ThankForm';
 import gintoki from './../../images/anime/gintoki.jpeg';
+import img1 from './../../images/anime/img1.png';
 
 
 function LogInAndSignUp() {
@@ -54,7 +55,10 @@ function LogInAndSignUp() {
             ) : (
                 <div>
                 {showSign ? (
-                    <div>
+                    <div className="logSignMainConatiner">
+                        <div className="logSignImgContainer">
+                            <img src={img1}></img>
+                        </div>
                         {user ? (<ThankForm />) : (<SignUpForm signUpSuccess={setUser} />)}
                     </div>
                 ):(
