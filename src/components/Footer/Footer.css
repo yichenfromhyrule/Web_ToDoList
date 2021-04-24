@@ -14,15 +14,15 @@
 
 .footerText{
     justify-content: start;
-    color: #BEF2E5;
+    color: #666666;
     cursor: pointer;
 }
 
 .footerText:hover{
-    color: #60EFDB;
+    color: black;
 }
 
 .footerDivider{
-    color: #BEF2E5;
+    color: #707070;
     padding: 0 10px;
 }
