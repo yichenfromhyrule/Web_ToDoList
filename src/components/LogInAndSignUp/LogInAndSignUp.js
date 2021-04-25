@@ -13,6 +13,9 @@ function LogInAndSignUp() {
     const [showLog, setShowLog] = useState(false);
     const [showSign, setShowSign] = useState(false);
     const clickLog = () => {
+        if(localStorage.getItem('rememberUser')){
+            window.location.href = "/home";
+        }
         if(showLog){
             setShowLog(false)
         }

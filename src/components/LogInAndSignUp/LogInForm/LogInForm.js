@@ -20,6 +20,7 @@ export const LogInForm =({logInSuccess}) => {
                 // Signed in
                 var user = userCredential.user;
                 console.log(user);
+                localStorage.setItem('rememberUser', email);
                 window.location.href = "/home";
             })
             .catch((error) => {
