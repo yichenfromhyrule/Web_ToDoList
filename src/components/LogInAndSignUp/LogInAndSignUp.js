@@ -15,14 +15,15 @@ function LogInAndSignUp() {
     const clickLog = () => {
         if(localStorage.getItem('rememberUser')){
             window.location.href = "/home";
-        }
-        if(showLog){
-            setShowLog(false)
-        }
-        else{
-            setShowSign(false)
-            setShowLog(true)
-        }   
+        }else{
+            if(showLog){
+                setShowLog(false)
+            }
+            else{
+                setShowSign(false)
+                setShowLog(true)
+            }   
+        } 
     };
     const clickSign = () => {
         if(showSign){

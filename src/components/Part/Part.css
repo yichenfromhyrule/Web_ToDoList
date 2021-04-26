@@ -1,15 +1,42 @@
-.part{
-    width: 33.3vw;
-    height: 90vh;
-    background-color: thistle;
+.partContainer_level1{
+    width: auto;
+    height: 100%;
+    margin: 20px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    
 }
 
-.part1{
-    width: auto;
-    margin-left: 20px;
-    margin-right: 20px;
-    height: 50vh;
-    background-color: rgb(255, 220, 220);
+.partContainer_level2_a{
+    width: 30%;
+    height: auto;
+    position: relative;
+}
+
+.partContainer_level2_b{
+    width: 40%;
+    height: auto;
+    padding: 20px;
+}
+
+.partContainer_level2_c{
+    width: 30%;
+    height: auto;
+    position: relative;
+    padding: 20px;
+}
+
+.partContainer_level3_a{
+    width: 100%;
+    height: 60%;
+    position: absolute;
+    bottom: 0;
+    padding: 20px;
+}
+
+.partContainer_Comments{
+    width: 100%;
+    height: 100%;
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 10px;
 }
