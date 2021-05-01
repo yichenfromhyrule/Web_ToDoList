@@ -3,4 +3,6 @@
     flex-direction: column;
     height: calc(100vh - 30px);
     background-color: rgb(221, 236, 236);
+    background-image: url("./../../images/anime/ichigu.jpeg");
+    background-repeat:repeat-x;
 }
