@@ -1,5 +1,6 @@
 import React from 'react';
 import "./Part.css";
+import CheckList from "./CheckList/CheckList";
 
 function Part() {
     return (
@@ -21,11 +22,13 @@ function Part() {
                     </div>
                 </div>
             </div>
+
             <div className="partContainer_level2_b">
                 <div className="partContainer_level4_a">
-                        
+                      <CheckList />  
                 </div>
             </div>
+
             <div className="partContainer_level2_c">
                 <div className="partContainer_level3_d">
                     <div className="partContainer_level4_a">
