@@ -1,0 +1,39 @@
+.comments_Container{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.comments_input_Container{
+    width: 100%;
+    height: 80%;
+    position: absolute;
+    padding: 10px;
+}
+
+.comments_submit_Container{
+    width: 100%;
+    height: 20%;
+    bottom: 0;
+    position: absolute;
+    padding: 10px;
+}
+
+.comments_inputBox{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.comments_submitBox{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
