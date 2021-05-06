@@ -1,9 +1,6 @@
 import React from 'react';
 import './SignUpForm.css';
-import firebase from "firebase/app";
-import "firebase/auth";
-import "firebase/firestore";
-import "firebase/database";
+import firebase from "../../../firebase";
 
 
 export const SignUpForm =({ signUpSuccess }) => {

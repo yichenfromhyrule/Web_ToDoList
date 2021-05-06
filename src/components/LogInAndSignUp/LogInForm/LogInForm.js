@@ -1,10 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './LogInForm.css';
-import firebase from "firebase/app";
-import "firebase/auth";
-import "firebase/firestore";
-import "firebase/database";
+import firebase from "../../../firebase";
+
 
 
 export const LogInForm =({logInSuccess}) => {
