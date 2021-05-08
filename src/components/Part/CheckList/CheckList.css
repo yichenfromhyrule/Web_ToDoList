@@ -14,7 +14,7 @@
     padding: 20px;
 }
 
-.checkList_Button_Container{
+.checkList_Editer_Container{
     width: 100%;
     height: 15%;
     position: absolute;
@@ -22,7 +22,7 @@
     padding: 20px;
 }
 
-.checkList_Edit_Button{
+.checkList_Editer_Button{
     width: 100%;
     height: 100%;
     border-radius: 10px;
