@@ -2,6 +2,7 @@ import React from 'react';
 import "./Part.css";
 import Comments from "./Comments/Comments";
 import CheckList from "./CheckList/CheckList";
+import CheckListEditer from "./CheckList/CheckListEditer";
 
 function Part() {
     return (
@@ -25,9 +26,17 @@ function Part() {
             </div>
 
             <div className="partContainer_level2_b">
-                <div className="partContainer_level4_a">
-                      <CheckList />  
+                <div className="partContainer_level3_f">
+                    <div className="partContainer_level4_a">
+                        <CheckList />
+                    </div>
                 </div>
+                <div className="partContainer_level3_g">
+                    <div className="partContainer_level4_a">
+                        <CheckListEditer />
+                    </div>
+                </div>
+                
             </div>
 
             <div className="partContainer_level2_c">
