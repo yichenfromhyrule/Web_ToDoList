@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import "./CheckList.css";
 import ToDoListDataService from "../../../services/todolist.service";
+import { ListGroup, ListGroupItem, Input, Label } from 'reactstrap';
 
 export default class CheckList extends Component {
     constructor(props) {
@@ -57,19 +58,23 @@ export default class CheckList extends Component {
         return (
             <div className="checkList_Container">
                 <div className="checkList_TodoList_Container">
-                    <div className="list row">
-                        <div className="col-md-6">
-                            <ul className="list-group">
-                                {todos &&
-                                    todos.map((todos, index)=>(
-                                        <li>
-                                            {todos.title}
-                                        </li>
-                                    ))
-                                }
-                            </ul>
-                        </div>
-                    </div>
+                    <ListGroup>
+                        <>
+                            {todos &&
+                                todos.map((todos, index)=>(
+                                    <Label check>
+                                        <ListGroupItem>
+                                            <div>
+                                                <Input type="checkbox" />{' '}
+                                                {todos.title}
+                                            </div>
+                                        </ListGroupItem>
+                                    </Label>
+                                ))
+                            }
+                        </>
+                    </ListGroup>
+                    
                 </div>
             
         </div>

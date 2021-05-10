@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import "./CheckList.css";
-import { Button } from 'react-bootstrap';
 import ToDoListDataService from "../../../services/todolist.service";
+import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 export default class CheckListEditer extends Component {
     constructor(props) {
@@ -64,6 +64,7 @@ export default class CheckListEditer extends Component {
         return (
             <div className="checkList_Editer_Body">
                 <div className="checkList_Editer_Container">
+                <Form>
                     {this.state.submitted ? (
                         <div>
                             <div>
@@ -77,31 +78,46 @@ export default class CheckListEditer extends Component {
                         </div>
                     ) : (
                         <div>
-                            <label>To Do Task: </label>
-                            <input
-                                type="text"
-                                id="title"
-                                required
-                                value={this.state.title}
-                                onChange={this.onChangeToDoTitle}
-                                name="title"
-                                className="checkList_Editer_Title"
-                            />
-                            <label>Task Details: </label>
-                            <input
-                                type="text"
-                                id="description"
-                                required
-                                value={this.state.description}
-                                onChange={this.onChangeDescription}
-                                name="description"
-                                className="checkList_Editer_Title"
-                            />
-                            <button onClick={this.saveToDo} className="btn btn-success">
+                            <>
+                                <FormGroup row>
+                                    <Label for="nameToDo" sm={2}>
+                                        Task
+                                    </Label>
+                                    <Col sm={10}>
+                                        <Input 
+                                            type="text" 
+                                            name="title" 
+                                            id="title" 
+                                            placeholder="with a placeholder" 
+                                            value={this.state.title}
+                                            onChange={this.onChangeToDoTitle}
+                                            required
+                                        />
+                                    </Col>
+                                </FormGroup>
+                                <FormGroup row>
+                                    <Label for="desToDo" sm={2}>
+                                        Details
+                                    </Label>
+                                    <Col sm={10}>
+                                        <Input
+                                            type="text"
+                                            id="description"
+                                            required
+                                            value={this.state.description}
+                                            onChange={this.onChangeDescription}
+                                            name="description"
+                                        />
+                                    </Col>
+                                </FormGroup>
+                            </>
+                            <Button onClick={this.saveToDo}>
                                 Submit
-                            </button>
+                            </Button>
+                            
                         </div>
                     )}   
+                </Form>
                 </div>
         </div>
     )
