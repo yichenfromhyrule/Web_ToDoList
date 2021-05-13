@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import "./CheckList.css";
 import ToDoListDataService from "../../../services/todolist.service";
-import { ListGroup, ListGroupItem, Input, Label } from 'reactstrap';
+import { ListGroup, ListGroupItem, Input, Label, Button, Container, Row, Col } from 'reactstrap';
 
 export default class CheckList extends Component {
     constructor(props) {
@@ -64,10 +64,22 @@ export default class CheckList extends Component {
                                 todos.map((todos, index)=>(
                                     <Label check>
                                         <ListGroupItem>
-                                            <div>
-                                                <Input type="checkbox" />{' '}
-                                                {todos.title}
-                                            </div>
+                                            <>
+                                                <Row>
+                                                    <Col xs="2">
+                                                        <Input type="checkbox" />
+                                                    </Col>
+                                                    <Col xs="8">
+                                                        <Label>{todos.title}</Label>
+                                                        
+                                                    </Col>
+                                                    <Col xs="2">
+                                                        <Button>Delete</Button>
+                                                    </Col>
+                                                </Row>
+                                            
+                                            
+                                            </>
                                         </ListGroupItem>
                                     </Label>
                                 ))

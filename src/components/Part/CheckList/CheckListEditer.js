@@ -107,6 +107,7 @@ export default class CheckListEditer extends Component {
                                             value={this.state.description}
                                             onChange={this.onChangeDescription}
                                             name="description"
+                                            placeholder="with a placeholder"
                                         />
                                     </Col>
                                 </FormGroup>
