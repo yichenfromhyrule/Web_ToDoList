@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import './LogInAndSignUp.css';
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, NavbarText} from 'reactstrap';
 import LogInForm from './LogInForm/LogInForm';
 import SignUpForm from './SignUpForm/SignUpForm';
 import ThankForm from './ThankForm/ThankForm';
@@ -8,8 +9,8 @@ import img1 from './../../images/anime/img1.png';
 
 
 function LogInAndSignUp() {
+    const [isOpen, setIsOpen] = useState(false);
     const [user, setUser] = React.useState(null);
-    
     const [showLog, setShowLog] = useState(false);
     const [showSign, setShowSign] = useState(false);
     const clickLog = () => {
@@ -34,19 +35,26 @@ function LogInAndSignUp() {
             setShowSign(true)
         }   
     };
+    const toggle = () => setIsOpen(!isOpen);
     return (
         <div>
-            <div className="logSignContainer">
-                <div className="logSignText" onClick={clickLog}>
-                    Log In
-                </div>
-                <div className="logSignDivider">
-                    |
-                </div>
-                <div className="logSignText" onClick={clickSign}>
-                    Sign Up
-                </div>
+            <div>
+                <Navbar color="light" light expand="md">
+                    <NavbarBrand href="/">猪猪家记事</NavbarBrand>
+                    <NavbarToggler onClick={toggle} />
+                    <Collapse isOpen={isOpen} navbar>
+                        <Nav className="mr-auto" navbar>
+                            <NavItem>
+                                <NavLink onClick={clickLog}>Log In</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink onClick={clickSign}>Sign Up</NavLink>
+                            </NavItem>
+                        </Nav>
+                    </Collapse>
+                </Navbar>
             </div>
+            
             
             {showLog ? (
                 <div className="logSignMainConatiner">
