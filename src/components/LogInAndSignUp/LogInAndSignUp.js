@@ -11,7 +11,14 @@ import {
     NavItem, 
     NavLink, 
     NavbarText,
-    Row
+    Row,
+    Card, 
+    CardImg, 
+    CardText, 
+    CardBody,
+    CardTitle, 
+    CardSubtitle, 
+    Button
 } from 'reactstrap';
 import LogInForm from './LogInForm/LogInForm';
 import SignUpForm from './SignUpForm/SignUpForm';
@@ -69,10 +76,7 @@ function LogInAndSignUp() {
             
             <>
             {showLog ? (
-                <div className="logSignMainConatiner">
-                    <div className="logSignImgContainer">
-                        <img src={gintoki}></img>
-                    </div>
+                <div>
                     <LogInForm />
                 </div>
                 
@@ -80,9 +84,6 @@ function LogInAndSignUp() {
                 <div>
                 {showSign ? (
                     <div className="logSignMainConatiner">
-                        <div className="logSignImgContainer">
-                            <img src={img1}></img>
-                        </div>
                         {user ? (<ThankForm />) : (<SignUpForm signUpSuccess={setUser} />)}
                     </div>
                 ):(

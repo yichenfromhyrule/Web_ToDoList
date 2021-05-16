@@ -1,6 +1,6 @@
 import React from 'react';
 import './SignUpForm.css';
-import firebase from "../../../firebase";
+import {auth} from "../../../firebase";
 
 
 export const SignUpForm =({ signUpSuccess }) => {
@@ -16,8 +16,7 @@ export const SignUpForm =({ signUpSuccess }) => {
             alert("Password should be at least 6 characters");
             setErrorMsg = true;
         }
-        firebase
-            .auth()
+        auth
             .createUserWithEmailAndPassword(email, password)
             .then((userCredential)=>{
                 var user = userCredential.user;

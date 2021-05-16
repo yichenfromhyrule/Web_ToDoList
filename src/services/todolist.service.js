@@ -1,6 +1,6 @@
-import firebase from "../firebase";
+import {database} from "../firebase";
 
-const db = firebase.ref("/todolist");
+const db = database.ref("/todolist");
 
 class ToDoListDataService {
     getAll(){
