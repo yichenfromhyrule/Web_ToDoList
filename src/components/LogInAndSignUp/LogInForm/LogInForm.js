@@ -68,31 +68,11 @@ export const LogInForm =({logInSuccess}) => {
                                 />
                             </FormGroup>
                             <Button>
-                                Submit
+                                LogIn
                             </Button>
                         </Form>
                     </CardBody>
                 </Card>
-                <form className="logFormForm" onSubmit={mySubmitHandler}>
-                    <input 
-                        className="logFormInput"
-                        onSubmit={mySubmitHandler}
-                    />
-                    <input 
-                        className="logFormInput"
-                        type="text"
-                        name="password"
-                        placeholder="Enter Password"
-                        onChange={(event) => setPassword(event.target.value)}
-                    />
-                    <input
-                            className="logFormButton"
-                            type="submit"
-                            value="Submit"
-                        />
-                    
-                    
-                </form>
             </div>
         )
     

@@ -22,9 +22,7 @@ import {
 } from 'reactstrap';
 import LogInForm from './LogInForm/LogInForm';
 import SignUpForm from './SignUpForm/SignUpForm';
-import ThankForm from './ThankForm/ThankForm';
-import gintoki from './../../images/anime/gintoki.jpeg';
-import img1 from './../../images/anime/img1.png';
+
 
 
 function LogInAndSignUp() {
@@ -67,31 +65,34 @@ function LogInAndSignUp() {
                                 <NavLink onClick={clickLog}>Log In</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink onClick={clickSign}>Sign Up</NavLink>
+                                <NavLink onClick={clickSign}>Create An Account</NavLink>
                             </NavItem>
                         </Nav>
                     </Collapse>
                 </Navbar>
             </div>
             
-            <>
-            {showLog ? (
-                <div>
-                    <LogInForm />
-                </div>
-                
-            ) : (
-                <div>
-                {showSign ? (
-                    <div className="logSignMainConatiner">
-                        {user ? (<ThankForm />) : (<SignUpForm signUpSuccess={setUser} />)}
-                    </div>
-                ):(
-                    null
-                )}
-                </div>
-            )}
-            </>
+            <div className="logSignContainer">
+                <>
+                    <>
+                        {showLog ? (
+                            <div>
+                                <LogInForm />
+                            </div>
+                        ) : (
+                            <div>
+                                {showSign ? (
+                                    <div>
+                                        <SignUpForm />
+                                    </div>
+                                ):(
+                                    null
+                                )}
+                            </div>
+                        )}
+                    </>
+                </>
+            </div>
             
             
         </div>

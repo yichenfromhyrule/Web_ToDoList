@@ -1,5 +1,20 @@
 import React from 'react';
 import './SignUpForm.css';
+import {
+    Card, 
+    CardImg, 
+    CardText, 
+    CardBody,
+    CardTitle, 
+    CardSubtitle, 
+    Col,
+    Button,
+    Form, 
+    FormGroup, 
+    Label, 
+    Input, 
+    FormText
+} from 'reactstrap';
 import {auth} from "../../../firebase";
 
 
@@ -34,34 +49,34 @@ export const SignUpForm =({ signUpSuccess }) => {
 
         
         return (
-            <div className="signFormContainer">
-                <form className="signFormForm" onSubmit={mySubmitHandler}>
-                    <input 
-                        className="signFormInput"
-                        type="text"
-                        name="email"
-                        placeholder="Enter Email"
-                        onChange={(event) => setEmail(event.target.value)}
-                    />
-                    <input 
-                        className="signFormInput"
-                        type="password"
-                        name="password"
-                        placeholder="Enter Password"
-                        onChange={(event) => setPassword(event.target.value)}
-                    />
-                    
-                    <input
-                        className="signFormButton"
-                        type="submit"
-                        value="Create An Account"
-                    />
-                    { setErrorMsg ? (
-                        <p>dsgjfjdsj</p>
-                    ):(
-                        null
-                    )}
-                </form>
+            <div>
+                <Card>
+                    <CardBody>
+                        <Form onSubmit={mySubmitHandler}>
+                            <FormGroup>
+                                <Label>Email</Label>
+                                <Input
+                                    type="email"
+                                    name="email"
+                                    placeholder="Enter Email"
+                                    onChange={(event) => setEmail(event.target.value)}
+                                />
+                            </FormGroup>
+                            <FormGroup>
+                                <Label>Password</Label>
+                                <Input
+                                    type="password"
+                                    name="password"
+                                    placeholder="Enter Password"
+                                    onChange={(event) => setPassword(event.target.value)}
+                                />
+                            </FormGroup>
+                            <Button>
+                                Create An Account
+                            </Button>
+                        </Form>
+                    </CardBody>
+                </Card>
             </div>
         )
     
