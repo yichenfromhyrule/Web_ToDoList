@@ -1,6 +1,18 @@
 import React, {useState} from 'react';
 import './LogInAndSignUp.css';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, NavbarText} from 'reactstrap';
+import { 
+    Collapse, 
+    Container,
+    Col,
+    Navbar, 
+    NavbarToggler, 
+    NavbarBrand, 
+    Nav, 
+    NavItem, 
+    NavLink, 
+    NavbarText,
+    Row
+} from 'reactstrap';
 import LogInForm from './LogInForm/LogInForm';
 import SignUpForm from './SignUpForm/SignUpForm';
 import ThankForm from './ThankForm/ThankForm';
@@ -55,7 +67,7 @@ function LogInAndSignUp() {
                 </Navbar>
             </div>
             
-            
+            <>
             {showLog ? (
                 <div className="logSignMainConatiner">
                     <div className="logSignImgContainer">
@@ -78,6 +90,7 @@ function LogInAndSignUp() {
                 )}
                 </div>
             )}
+            </>
             
             
         </div>
