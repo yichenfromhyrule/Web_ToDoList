@@ -56,9 +56,9 @@ export default class CheckList extends Component {
     render(){
         const {todos} = this.state;
         return (
-            <div className="checkList_Container">
-                <div className="checkList_TodoList_Container">
-                    <ListGroup>
+            <div>
+                <div>
+                    <ListGroup flush>
                         <>
                             {todos &&
                                 todos.map((todos, index)=>(
