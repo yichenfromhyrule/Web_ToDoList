@@ -13,7 +13,12 @@ export default class CheckList extends Component {
     
         this.state = {
           todos:[],
-          currentToDo: null,
+          currentToDo: {
+              key: null,
+              title: "",
+              description: "",
+              published: false,
+          },
           currentIndex: -1,
         };
     }
@@ -52,45 +57,40 @@ export default class CheckList extends Component {
         });
     }
 
-
+    deleteItem(){
+        console.log(this.state.currentToDo);
+        ToDoListDataService.delete(this.state.currentToDo.key)
+        .then(() => {
+            this.props.refreshList();
+        })
+        .catch((e) => {
+            console.log(e);
+        })
+    }
     render(){
         const {todos} = this.state;
         return (
             <div>
-                <div>
-                    <ListGroup flush>
-                        <>
-                            {todos &&
-                                todos.map((todos, index)=>(
-                                    <Label check>
-                                        <ListGroupItem>
-                                            <>
-                                                <Row>
+                <ListGroup flush>    
+                    {todos &&
+                        todos.map((todos, index)=>(
+                                    <ListGroupItem>
+                                        <>
+                                            <Row>   
+                                                <Label sm={6}>{todos.title}</Label>   
                                                     <Col xs="2">
-                                                        <Input type="checkbox" />
-                                                    </Col>
-                                                    <Col xs="8">
-                                                        <Label>{todos.title}</Label>
-                                                        
-                                                    </Col>
-                                                    <Col xs="2">
-                                                        <Button>Delete</Button>
+                                                        <Button onClick={() => this.deleteItem}>Delete</Button>
                                                     </Col>
                                                 </Row>
                                             
-                                            
                                             </>
                                         </ListGroupItem>
-                                    </Label>
-                                ))
-                            }
-                        </>
-                    </ListGroup>
-                    
-                </div>
-            
-        </div>
-    )
+                                    
+                        ))
+                    }   
+                </ListGroup>
+            </div>
+        )
     }
 }
 
