@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import "./CheckList.css";
 import ToDoListDataService from "../../../services/todolist.service";
 import { ListGroup, ListGroupItem, Input, Label, Button, Container, Row, Col } from 'reactstrap';
+import ListItem from "./ListItems/ListItems";
 
 export default class CheckList extends Component {
     constructor(props) {
