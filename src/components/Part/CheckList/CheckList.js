@@ -68,24 +68,30 @@ export default class CheckList extends Component {
             console.log(e);
         })
     }
+
     render(){
+
         const {todos} = this.state;
+        function handleRemove(key){
+            console.log(key);
+            ToDoListDataService.delete(key)
+            .catch((e) => {
+                console.log(e);
+            });
+        }
         return (
             <div>
                 <ListGroup flush>    
                     {todos &&
-                        todos.map((todos, index)=>(
-                                    <ListGroupItem>
-                                        <>
-                                            <Row>   
-                                                <Label sm={6}>{todos.title}</Label>   
-                                                    <Col xs="2">
-                                                        <Button onClick={() => this.deleteItem}>Delete</Button>
-                                                    </Col>
-                                                </Row>
-                                            
-                                            </>
-                                        </ListGroupItem>
+                        todos.map((item)=>(
+                            <ListGroupItem>
+                                <Row key={item.key}>   
+                                    <span>{item.title}</span>
+                                    <button onClick={() => handleRemove(item.key)}>
+                                        Remove
+                                    </button>           
+                                </Row>
+                            </ListGroupItem>
                                     
                         ))
                     }   

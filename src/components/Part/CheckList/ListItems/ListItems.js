@@ -23,14 +23,17 @@ export default class ListItems extends Component {
     }
 
     render() {
-        <div>
+        const {currentItem} = this.state;
+        return (
+            <div>
             <p>
                 {currentItem.title}
             </p>
             <button onclick={this.deleteItem}>
                 Delete
             </button>
-        </div>
+            </div>
+        );
     }
     
 }
