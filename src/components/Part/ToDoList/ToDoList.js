@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
-import "./CheckList.css";
 import ToDoListDataService from "../../../services/todolist.service";
 import { ListGroup, ListGroupItem, Input, Label, Button, Container, Row, Col } from 'reactstrap';
-import ListItem from "./ListItems/ListItems";
 
-export default class CheckList extends Component {
+
+export default class ToDo extends Component {
     constructor(props) {
         super(props);
         this.refreshList = this.refreshList.bind(this);
@@ -86,10 +85,10 @@ export default class CheckList extends Component {
                         todos.map((item)=>(
                             <ListGroupItem>
                                 <Row key={item.key}>   
-                                    <span>{item.title}</span>
-                                    <button onClick={() => handleRemove(item.key)}>
+                                    <Label sm={8}>{item.title}</Label>
+                                    <Button onClick={() => handleRemove(item.key)}>
                                         Remove
-                                    </button>           
+                                    </Button>           
                                 </Row>
                             </ListGroupItem>
                                     

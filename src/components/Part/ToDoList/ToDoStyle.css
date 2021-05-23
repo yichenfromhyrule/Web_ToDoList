@@ -1,4 +1,4 @@
-.checkList_Container{
+.ToDo_Container{
     width: 100%;
     height: 100%;
     position: relative;
@@ -6,7 +6,7 @@
     flex-direction: column;
 }
 
-.checkList_TodoList_Container{
+.ToDo_TodoList_Container{
     width: 100%;
     height: 100%;
     position: absolute;
@@ -17,7 +17,7 @@
     flex-direction: column;
 }
 
-.checkList_TodoElement_Container{
+.ToDo_TodoElement_Container{
     width: 100%;
     height: 35px;
     display: flex;
@@ -27,7 +27,7 @@
 }
 
 
-.checkList_Editer_Body{
+.ToDo_Editer_Body{
     width: 100%;
     height: 100%;
     position: relative;
@@ -36,20 +36,20 @@
     padding: 10px 20px;
     overflow-y: scroll;
 }
-.checkList_Editer_Container{
+.ToDo_Editer_Container{
     height: 100%;
     display: flex;
     flex-direction: column;
     
 }
-.checkList_Editer_Title {
+.ToDo_Editer_Title {
     width: 100%;
     background-color: rgb(218, 244, 245);
     margin: 5px 0;
     border-radius: 5px;
 }
 
-.checkList_Editer_Button{
+.ToDo_Editer_Button{
     width: 100px;
     height: 30px;
     border-radius: 10px;

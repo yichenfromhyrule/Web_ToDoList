@@ -21,13 +21,13 @@ import {
     Button
 } from 'reactstrap';
 import Comments from "./Comments/Comments";
-import CheckList from "./CheckList/CheckList";
-import CheckListEditer from "./CheckList/CheckListEditer";
+import ToDoList from "./ToDoList/ToDoList";
+import ToDoEditior from "./ToDoList/ToDoEditior";
 
 function Part() {
     return (
         <div className="partContainer">
-            <Row>
+            <div class="row no-gutters">
                 <Col sm="4">
                     <Card body>
                         <CardTitle tag="h5">Special Title Treatment</CardTitle>
@@ -39,20 +39,19 @@ function Part() {
                     <Row>
                         <Card body>
                             <CardTitle tag="h5">Check List</CardTitle>
-                            <div className="checkListContainer">
-                                <CheckList />
+                            <div className="ToDoContainer">
+                                <ToDoList />
                             </div>    
                         </Card>
                     </Row>
                     <Row>
                         <Card body>
-                            <CardTitle tag="h5">Special Title Treatment</CardTitle>
-                            <CheckListEditer />
+                            <ToDoEditior />
                         </Card>
                     </Row>
                     
                 </Col>
-            </Row>  
+            </div>  
         </div>
     )
 }

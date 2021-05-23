@@ -33,7 +33,7 @@ function Home() {
             <HomeNavbar />
 
             <Part />
-            <Footer />
+            
         </div>
     )
 }

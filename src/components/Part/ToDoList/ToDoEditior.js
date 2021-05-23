@@ -1,9 +1,21 @@
-import React, {Component} from 'react';
-import "./CheckList.css";
+import React, {Component, useState} from 'react';
+import "./ToDoStyle.css";
 import ToDoListDataService from "../../../services/todolist.service";
-import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { 
+    Col, 
+    Button, 
+    Form, 
+    FormGroup, 
+    Label, 
+    Input, 
+    FormText,
+    Dropdown, 
+    DropdownToggle, 
+    DropdownMenu, 
+    DropdownItem
+} from 'reactstrap';
 
-export default class CheckListEditer extends Component {
+export default class ToDoEditior extends Component {
     constructor(props) {
         super(props);
         this.onChangeToDoTitle = this.onChangeToDoTitle.bind(this);
@@ -16,6 +28,7 @@ export default class CheckListEditer extends Component {
           description: "",
           published: false,
           submitted: false,
+          dropdownOpen: false,
         };
     }
 
@@ -61,9 +74,11 @@ export default class CheckListEditer extends Component {
 
     render(){
         const {todos} = this.state;
+        
+        //const toggle = () => setDropdownOpen(prevState => !prevState);
         return (
-            <div className="checkList_Editer_Body">
-                <div className="checkList_Editer_Container">
+            <div className="ToDo_Editer_Body">
+                <div className="ToDo_Editer_Container">
                 <Form>
                     {this.state.submitted ? (
                         <div>
@@ -71,7 +86,7 @@ export default class CheckListEditer extends Component {
                                 <label>What is your plan?</label>
                             </div>
                             <div>
-                                <button className="checkList_Editer_Button" onClick={this.newToDo}>
+                                <button className="ToDo_Editer_Button" onClick={this.newToDo}>
                                     ADD
                                 </button>
                             </div>
@@ -80,10 +95,29 @@ export default class CheckListEditer extends Component {
                         <div>
                             <>
                                 <FormGroup row>
+                                    <Label for="priorityToDo" sm={2}>
+                                        Priority
+                                    </Label>
+                                    <Dropdown>
+                                        <DropdownToggle caret>
+                                            Dropdown
+                                        </DropdownToggle>
+                                        <DropdownMenu>
+                                            <DropdownItem>
+                                                High
+                                            </DropdownItem>
+                                            <DropdownItem>
+                                                Medium
+                                            </DropdownItem>
+                                            <DropdownItem>
+                                                Low
+                                            </DropdownItem>
+                                        </DropdownMenu>
+                                    </Dropdown>
                                     <Label for="nameToDo" sm={2}>
                                         Task
                                     </Label>
-                                    <Col sm={10}>
+                                    <Col sm={5}>
                                         <Input 
                                             type="text" 
                                             name="title" 
