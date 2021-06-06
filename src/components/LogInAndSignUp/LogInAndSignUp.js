@@ -11,6 +11,7 @@ import {
 } from 'reactstrap';
 import LogInForm from './LogInForm/LogInForm';
 import SignUpForm from './SignUpForm/SignUpForm';
+import WelcomeForm from '../WelcomForm/Main/WelcomeForm';
 
 
 
@@ -61,25 +62,17 @@ function LogInAndSignUp() {
             </div>
             
             <div className="logSignContainer">
-                <>
-                    <>
-                        {showLog ? (
-                            <div>
-                                <LogInForm />
-                            </div>
-                        ) : (
-                            <div>
-                                {showSign ? (
-                                    <div>
-                                        <SignUpForm />
-                                    </div>
-                                ):(
-                                    null
-                                )}
-                            </div>
-                        )}
-                    </>
-                </>
+                <WelcomeForm />
+                <LogInForm />
+                <div>
+                    {showSign ? (
+                        <div>
+                            <SignUpForm />
+                        </div>
+                    ):(
+                        null
+                    )}
+                </div>
             </div>
             
             
