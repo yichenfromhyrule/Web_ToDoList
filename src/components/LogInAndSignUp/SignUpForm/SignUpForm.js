@@ -2,18 +2,12 @@ import React from 'react';
 import './SignUpForm.css';
 import {
     Card, 
-    CardImg, 
-    CardText, 
     CardBody,
-    CardTitle, 
-    CardSubtitle, 
-    Col,
     Button,
     Form, 
     FormGroup, 
     Label, 
-    Input, 
-    FormText
+    Input
 } from 'reactstrap';
 import {auth} from "../../../firebase";
 
@@ -22,14 +16,12 @@ export const SignUpForm =({ signUpSuccess }) => {
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
     var errorMsg=[];
-    var setErrorMsg = false;
     
     const mySubmitHandler = async(event) => {
         event.preventDefault()
         if(password.length < 6){
             errorMsg.push("Password should be at least 6 characters");
             alert("Password should be at least 6 characters");
-            setErrorMsg = true;
         }
         auth
             .createUserWithEmailAndPassword(email, password)
@@ -40,7 +32,6 @@ export const SignUpForm =({ signUpSuccess }) => {
                 return; 
             })
             .catch((error) => {
-                var errorCode = error.code;
                 var errorMessage = error.message;
                 console.log(errorMessage);
             });

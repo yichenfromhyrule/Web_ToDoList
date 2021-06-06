@@ -1,4 +1,4 @@
-import React, {Component, useState} from 'react';
+import React, {Component} from 'react';
 import "./ToDoStyle.css";
 import ToDoListDataService from "../../../services/todolist.service";
 import { 
@@ -7,8 +7,7 @@ import {
     Form, 
     FormGroup, 
     Label, 
-    Input, 
-    FormText,
+    Input,
     Dropdown, 
     DropdownToggle, 
     DropdownMenu, 
@@ -30,8 +29,16 @@ export default class ToDoEditior extends Component {
           submitted: false,
           dropdownOpen: false,
         };
+
+        this.handleClickDropDown = this.handleClickDropDown.bind(this);
     }
 
+    handleClickDropDown() {
+        this.setState({
+            dropdownOpen: !this.state.dropdownOpen
+        });
+        console.log(this.state.dropdownOpen);
+    }
 
     onChangeToDoTitle(e) {
         this.setState({
@@ -73,9 +80,7 @@ export default class ToDoEditior extends Component {
     }
 
     render(){
-        const {todos} = this.state;
         
-        //const toggle = () => setDropdownOpen(prevState => !prevState);
         return (
             <div className="ToDo_Editer_Body">
                 <div className="ToDo_Editer_Container">
@@ -83,41 +88,22 @@ export default class ToDoEditior extends Component {
                     {this.state.submitted ? (
                         <div>
                             <div>
-                                <label>What is your plan?</label>
+                                <label>Add a new plan?</label>
                             </div>
                             <div>
-                                <button className="ToDo_Editer_Button" onClick={this.newToDo}>
+                                <Button color="primary" onClick={() => this.newToDo()}>
                                     ADD
-                                </button>
+                                </Button>
                             </div>
                         </div>
                     ) : (
                         <div>
                             <>
                                 <FormGroup row>
-                                    <Label for="priorityToDo" sm={2}>
-                                        Priority
-                                    </Label>
-                                    <Dropdown>
-                                        <DropdownToggle caret>
-                                            Dropdown
-                                        </DropdownToggle>
-                                        <DropdownMenu>
-                                            <DropdownItem>
-                                                High
-                                            </DropdownItem>
-                                            <DropdownItem>
-                                                Medium
-                                            </DropdownItem>
-                                            <DropdownItem>
-                                                Low
-                                            </DropdownItem>
-                                        </DropdownMenu>
-                                    </Dropdown>
                                     <Label for="nameToDo" sm={2}>
                                         Task
                                     </Label>
-                                    <Col sm={5}>
+                                    <Col sm={8}>
                                         <Input 
                                             type="text" 
                                             name="title" 
@@ -127,6 +113,20 @@ export default class ToDoEditior extends Component {
                                             onChange={this.onChangeToDoTitle}
                                             required
                                         />
+                                    </Col>
+                                    <Col sm={2} style={{ display: 'flex', justifyContent: 'flex-end' }}>
+
+                                    
+                                    <Dropdown isOpen={this.state.dropdownOpen} toggle={this.handleClickDropDown} >
+                                        <DropdownToggle caret color="primary">
+                                            Priority
+                                        </DropdownToggle>
+                                        <DropdownMenu right>
+                                            <DropdownItem>High</DropdownItem>
+                                            <DropdownItem>Normal</DropdownItem>
+                                            <DropdownItem>Low</DropdownItem>
+                                        </DropdownMenu>
+                                    </Dropdown>
                                     </Col>
                                 </FormGroup>
                                 <FormGroup row>

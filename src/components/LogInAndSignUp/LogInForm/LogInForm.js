@@ -1,18 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import {
-    Card, 
-    CardImg, 
-    CardText, 
-    CardBody,
-    CardTitle, 
-    CardSubtitle, 
+    Card,
+    CardBody, 
     Button,
     Form, 
     FormGroup, 
     Label, 
-    Input, 
-    FormText
+    Input
   } from 'reactstrap';
 import './LogInForm.css';
 import {auth} from "../../../firebase";
@@ -20,7 +14,7 @@ import {auth} from "../../../firebase";
 
 
 
-export const LogInForm =({logInSuccess}) => {
+export const LogInForm =() => {
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
 
@@ -37,7 +31,6 @@ export const LogInForm =({logInSuccess}) => {
             })
             .catch((error) => {
                 var errorCode = error.code;
-                var errorMessage = error.message;
                 alert(errorCode);
             });
         

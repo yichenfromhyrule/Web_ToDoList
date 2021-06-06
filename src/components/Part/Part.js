@@ -1,33 +1,20 @@
 import React from 'react';
 import "./Part.css";
-import { 
-    Collapse, 
-    Container,
+import {
     Col,
-    Navbar, 
-    NavbarToggler, 
-    NavbarBrand, 
-    Nav, 
-    NavItem, 
-    NavLink, 
-    NavbarText,
     Row,
     Card, 
-    CardImg, 
-    CardText, 
-    CardBody,
+    CardText,
     CardTitle, 
-    CardSubtitle, 
     Button
 } from 'reactstrap';
-import Comments from "./Comments/Comments";
 import ToDoList from "./ToDoList/ToDoList";
 import ToDoEditior from "./ToDoList/ToDoEditior";
 
 function Part() {
     return (
         <div className="partContainer">
-            <div class="row no-gutters">
+            <div className="row no-gutters">
                 <Col sm="4">
                     <Card body>
                         <CardTitle tag="h5">Special Title Treatment</CardTitle>
@@ -38,15 +25,15 @@ function Part() {
                 <Col sm="8">
                     <Row>
                         <Card body>
-                            <CardTitle tag="h5">Check List</CardTitle>
-                            <div className="ToDoContainer">
-                                <ToDoList />
-                            </div>    
+                                <ToDoEditior />
                         </Card>
                     </Row>
                     <Row>
                         <Card body>
-                            <ToDoEditior />
+                            <CardTitle tag="h5">Check List</CardTitle>
+                            <div className="ToDoContainer">
+                                      <ToDoList />
+                            </div>    
                         </Card>
                     </Row>
                     

@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import ToDoListDataService from "../../../services/todolist.service";
-import { ListGroup, ListGroupItem, Input, Label, Button, Container, Row, Col } from 'reactstrap';
+import { ListGroup, ListGroupItem, Label, Button, Row } from 'reactstrap';
 
 
-export default class ToDo extends Component {
+export default class ToDoList extends Component {
     constructor(props) {
         super(props);
         this.refreshList = this.refreshList.bind(this);
@@ -27,6 +27,7 @@ export default class ToDo extends Component {
         ToDoListDataService.getAll().on("value", this.onDataChange);
     }
 
+    // eslint-disable-next-line react/no-deprecated
     componentWillMount() {
         ToDoListDataService.getAll().off("value", this.onDataChange);
     }
@@ -83,6 +84,7 @@ export default class ToDo extends Component {
                 <ListGroup flush>    
                     {todos &&
                         todos.map((item)=>(
+                            // eslint-disable-next-line react/jsx-key
                             <ListGroupItem>
                                 <Row key={item.key}>   
                                     <Label sm={8}>{item.title}</Label>

@@ -1,7 +1,7 @@
 import React from 'react';
-import './../App.css';
-import LogInAndSignUp from './../components/LogInAndSignUp/LogInAndSignUp';
-import Footer from './../components/Footer/Footer';
+import './../../App.css';
+import LogInAndSignUp from '../../components/LogInAndSignUp/LogInAndSignUp';
+import Footer from '../../components/Footer/Footer';
 
 function LogIn() {
     return (

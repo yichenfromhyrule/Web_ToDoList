@@ -1,24 +1,13 @@
 import React, {useState} from 'react';
 import './LogInAndSignUp.css';
 import { 
-    Collapse, 
-    Container,
-    Col,
+    Collapse,
     Navbar, 
     NavbarToggler, 
     NavbarBrand, 
     Nav, 
     NavItem, 
-    NavLink, 
-    NavbarText,
-    Row,
-    Card, 
-    CardImg, 
-    CardText, 
-    CardBody,
-    CardTitle, 
-    CardSubtitle, 
-    Button
+    NavLink
 } from 'reactstrap';
 import LogInForm from './LogInForm/LogInForm';
 import SignUpForm from './SignUpForm/SignUpForm';
@@ -27,7 +16,6 @@ import SignUpForm from './SignUpForm/SignUpForm';
 
 function LogInAndSignUp() {
     const [isOpen, setIsOpen] = useState(false);
-    const [user, setUser] = React.useState(null);
     const [showLog, setShowLog] = useState(false);
     const [showSign, setShowSign] = useState(false);
     const clickLog = () => {

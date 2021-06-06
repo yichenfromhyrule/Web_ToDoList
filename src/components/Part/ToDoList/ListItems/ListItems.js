@@ -29,7 +29,7 @@ export default class ListItems extends Component {
             <p>
                 {currentItem.title}
             </p>
-            <button onclick={this.deleteItem}>
+            <button onClick={this.deleteItem}>
                 Delete
             </button>
             </div>
