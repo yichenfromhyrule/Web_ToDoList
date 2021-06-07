@@ -1,0 +1,31 @@
+.welcomeText {
+    font-size: 30px;
+    color: black;
+}
+
+.hrText {
+    font-size: 15px;
+    color: rgb(107, 107, 107);
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgb(107, 107, 107);
+    line-height: 0.1em;
+    margin: 15px 0 15px;
+}
+.hrText span {
+    background: #fff;
+    padding: 0 10px;
+}
+
+.tipText {
+    font-size: 15px;
+    color: rgb(107, 107, 107);
+    width: 100%;
+    text-align: center;
+    line-height: 0.1em;
+    margin: 25px 0 10px;
+}
+.tipText span {
+    background: #fff;
+    padding: 0 10px;
+}

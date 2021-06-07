@@ -1,0 +1,12 @@
+.tipText {
+    font-size: 15px;
+    color: rgb(107, 107, 107);
+    width: 100%;
+    text-align: center;
+    line-height: 0.1em;
+    margin: 15px 0 15px;
+}
+.tipText span {
+    background: #fff;
+    padding: 0 10px;
+}

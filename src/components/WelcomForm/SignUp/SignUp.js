@@ -1,5 +1,5 @@
 import React from 'react';
-import "./LogIn.css";
+import "./../LogIn/LogIn.css";
 import { 
     Button,
     Form, 
@@ -11,24 +11,30 @@ import {auth} from "../../../firebase";
 import firebase from "firebase";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export const LogIn=()=> {
-    // Email LogIn
+export const  SignUp =({ signUpSuccess })=> {
+    // Email Sign Up
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
+    var errorMsg=[];
+
     const mySubmitHandler = async(event) => {
         event.preventDefault();
+        if(password.length < 6){
+            errorMsg.push("Password should be at least 6 characters");
+            alert("Password should be at least 6 characters");
+        }
         auth
-            .signInWithEmailAndPassword(email, password)
+            .createUserWithEmailAndPassword(email, password)
             .then((userCredential) => {
                 // Signed in
                 var user = userCredential.user;
-                console.log(user);
-                localStorage.setItem('rememberUser', email);
                 window.location.href = "/home";
+                signUpSuccess(user);
+                return;
             })
             .catch((error) => {
-                var errorCode = error.code;
-                alert(errorCode);
+                var errorMessage = error.message;
+                console.log(errorMessage);
             });
     }
 
@@ -44,18 +50,14 @@ export const LogIn=()=> {
                 window.location.href = "/home";
             })
             .catch((error) => {
-                var errorCode = error.code;
-                alert(errorCode);
+                var errorMessage = error.message;
+                console.log(errorMessage);
             });
     }
-
     return (
         <div>
             <Form onSubmit={mySubmitHandler}>
                 <FormGroup>
-                    <div className="welcomeText">
-                        Welcome Back!
-                    </div>
                     <Label className="mt-2">Email</Label>
                     <Input 
                         xs="6" 
@@ -75,7 +77,7 @@ export const LogIn=()=> {
                         onChange={(event) => setPassword(event.target.value)}
                     />
                     <Button className="mt-3 btn-dark btn-block">
-                        LogIn
+                        Sign Up
                     </Button>
                     <div className="hrText">
                         <span>
@@ -95,7 +97,7 @@ export const LogIn=()=> {
                     </Button>
                     <div className="tipText">
                         <span>
-                            Don&apos;t have an account?
+                            Already have an account?
                         </span>
                     </div>
                 </FormGroup>
@@ -104,4 +106,4 @@ export const LogIn=()=> {
     )
 }
 
-export default LogIn
+export default SignUp
