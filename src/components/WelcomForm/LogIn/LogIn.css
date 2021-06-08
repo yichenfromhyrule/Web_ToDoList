@@ -29,19 +29,25 @@
     background: #fff;
     padding: 0 10px;
 }
-
-.bouton-image:before {
-    content: "";
-    width: 16px;
-    height: 16px;
-    display: inline-block;
-    margin-right: 5px;
-    vertical-align: text-top;
-    background-color: transparent;
-    background-position : center center;
-    background-repeat:no-repeat;
+::-webkit-input-placeholder {
+    font-size: 13px!important;
 }
-
-.monBouton:before{
-     background-image : url("./../../../images/icons/google.png");
+ 
+:-moz-placeholder { /* Firefox 18- */
+    font-size: 13px!important;
+}
+::-moz-placeholder {  /* Firefox 19+ */
+    font-size: 13px!important;
+}
+.btn {
+    font-size: 0.8rem!important;
+    padding: .75rem .75rem!important;
+    text-align: center!important;
+}
+label{
+    font-size: 0.8rem!important;
+}
+.imgIcon {
+    margin-bottom: 2px;
+    margin-right: 10px;
 }

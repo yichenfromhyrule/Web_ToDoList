@@ -9,7 +9,7 @@ import {
 } from 'reactstrap';
 import {auth} from "../../../firebase";
 import firebase from "firebase";
-//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import googleIcon from "./../../../images/icons/google.png";
 
 export const LogIn=()=> {
     // Email LogIn
@@ -85,10 +85,16 @@ export const LogIn=()=> {
                     <Button 
                         outline 
                         color="primary"
-                        className="mt-2 btn-block rounded-0 bouton-image monBouton"
+                        className="mt-2 btn-block rounded-0"
                         onClick = {googleSignIn}
                     >
-                        <span>Google</span>
+                        <img
+                            src={googleIcon}
+                            width="14"
+                            className="imgIcon"
+                        />
+                        Google
+                        
                     </Button>
                     <div className="tipText">
                         <span>

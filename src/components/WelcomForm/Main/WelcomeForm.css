@@ -10,3 +10,6 @@
     background: #fff;
     padding: 0 10px;
 }
+.card-body {
+    padding: 0.5rem!important;
+}
