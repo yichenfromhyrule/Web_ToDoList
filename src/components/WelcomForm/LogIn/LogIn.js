@@ -9,7 +9,7 @@ import {
 } from 'reactstrap';
 import {auth} from "../../../firebase";
 import firebase from "firebase";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const LogIn=()=> {
     // Email LogIn
@@ -74,7 +74,7 @@ export const LogIn=()=> {
                         placeholder="Enter your password"
                         onChange={(event) => setPassword(event.target.value)}
                     />
-                    <Button className="mt-3 btn-dark btn-block">
+                    <Button className="mt-3 btn-dark btn-block rounded-0">
                         LogIn
                     </Button>
                     <div className="hrText">
@@ -85,12 +85,9 @@ export const LogIn=()=> {
                     <Button 
                         outline 
                         color="primary"
-                        className="mt-2 btn-block"
+                        className="mt-2 btn-block rounded-0 bouton-image monBouton"
                         onClick = {googleSignIn}
                     >
-                        <span>
-                            <FontAwesomeIcon icon="fa-solid fa-g" />
-                        </span>
                         <span>Google</span>
                     </Button>
                     <div className="tipText">

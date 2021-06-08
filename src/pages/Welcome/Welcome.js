@@ -2,7 +2,7 @@ import React from 'react';
 import './../../App.css';
 import WelcomeForm from '../../components/WelcomForm/Main/WelcomeForm';
 
-function LogIn() {
+function Welcome() {
     return (
         <div className="App">
             <div className="welcomeFormContainer">
@@ -12,4 +12,4 @@ function LogIn() {
     )
 }
 
-export default LogIn
+export default Welcome

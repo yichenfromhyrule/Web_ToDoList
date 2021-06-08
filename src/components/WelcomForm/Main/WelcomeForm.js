@@ -46,7 +46,8 @@ export const WelcomeForm=()=> {
                         <div>
                             <LogIn />
                             <Button
-                                className="btn-block"
+                                className="btn-block rounded-0"
+                                color="info"
                                 onClick={clickSign}
                             >
                                 Create account
@@ -56,7 +57,8 @@ export const WelcomeForm=()=> {
                         <div>
                             <SignUp />
                             <Button
-                                className="btn-block"
+                                className="btn-block rounded-0"
+                                color="success"
                                 onClick={clickLog}
                             >
                                 Log In

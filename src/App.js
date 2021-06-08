@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter , Switch, Route } from 'react-router-dom';
 import './App.css';
-import LogIn from './pages/LogIn/LogIn';
+import Welcome from './pages/Welcome/Welcome';
 import Home from './pages/Home/Home';
 import 'font-awesome/css/font-awesome.min.css';
 
@@ -11,7 +11,7 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route exact path="/">
-            <LogIn />
+            <Welcome />
           </Route>
           <Route exact path="/home">
             <Home />

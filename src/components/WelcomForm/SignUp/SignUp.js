@@ -58,6 +58,9 @@ export const  SignUp =({ signUpSuccess })=> {
         <div>
             <Form onSubmit={mySubmitHandler}>
                 <FormGroup>
+                    <div className="welcomeText">
+                        Nice To Meet You!
+                    </div>
                     <Label className="mt-2">Email</Label>
                     <Input 
                         xs="6" 
@@ -76,7 +79,7 @@ export const  SignUp =({ signUpSuccess })=> {
                         placeholder="Enter your password"
                         onChange={(event) => setPassword(event.target.value)}
                     />
-                    <Button className="mt-3 btn-dark btn-block">
+                    <Button className="mt-3 btn-dark btn-block rounded-0">
                         Sign Up
                     </Button>
                     <div className="hrText">
@@ -87,7 +90,7 @@ export const  SignUp =({ signUpSuccess })=> {
                     <Button 
                         outline 
                         color="primary"
-                        className="mt-2 btn-block"
+                        className="mt-2 btn-block rounded-0"
                         onClick = {googleSignIn}
                     >
                         <span>
