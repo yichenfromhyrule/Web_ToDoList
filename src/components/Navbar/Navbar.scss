@@ -1,0 +1,25 @@
+@import '~react-pro-sidebar/dist/scss/styles.scss';
+$sidebar-bg-color: #eccfcf !default;
+.pro-sidebar > .pro-sidebar-inner {
+    background: white;
+}
+.pro-sidebar .pro-menu.shaped .pro-menu-item > .pro-inner-item > .pro-icon-wrapper {
+    background-color: transparent;
+    margin-right: 0px;
+}
+
+svg {
+    stroke: currentcolor;
+    fill: currentcolor;
+    stroke-width: 0;
+    height: 3em;
+    width: 3em;
+}
+
+.pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 12px 20px 12px 20px;
+    cursor: pointer;
+}

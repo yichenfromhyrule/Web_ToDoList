@@ -1,15 +1,14 @@
 import React from 'react';
-import './../../App.css';
-import Part from '../../components/Part/Part';
+//import Part from '../../components/Part/Part';
 import './Home.css';
-import HomeNavbar from '../Navbar/Navbar';
+import Navbar from './../../components/Navbar/Navbar';
+import Profile from './../../components/Profile/Profile';
 
 function Home() {
     return (
-        <div className="App">
-            <HomeNavbar />
-
-            <Part />
+        <div className="homeContainer">
+            <Navbar />
+            <Profile />
             
         </div>
     )

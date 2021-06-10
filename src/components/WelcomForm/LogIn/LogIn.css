@@ -4,7 +4,7 @@
 }
 
 .hrText {
-    font-size: 15px;
+    font-size: 0.8rem;
     color: rgb(107, 107, 107);
     width: 100%;
     text-align: center;
@@ -18,7 +18,7 @@
 }
 
 .tipText {
-    font-size: 15px;
+    font-size: 0.8rem;
     color: rgb(107, 107, 107);
     width: 100%;
     text-align: center;
@@ -41,7 +41,7 @@
 }
 .btn {
     font-size: 0.8rem!important;
-    padding: .75rem .75rem!important;
+    padding: .45rem .75rem!important;
     text-align: center!important;
 }
 label{
