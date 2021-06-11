@@ -2,7 +2,7 @@ import React from 'react';
 //import Part from '../../components/Part/Part';
 import './Home.css';
 import Navbar from './../../components/Navbar/Navbar';
-import Profile from './../../components/Profile/Profile';
+import Profile from './../../components/Profile/Main/Profile';
 
 function Home() {
     return (
