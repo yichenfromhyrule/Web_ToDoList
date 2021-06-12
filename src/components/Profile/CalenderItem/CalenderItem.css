@@ -1,0 +1,7 @@
+.react-calendar {
+    border: 0; 
+}
+
+abbr[data-original-title], abbr[title]{
+    text-decoration: none!important;
+}

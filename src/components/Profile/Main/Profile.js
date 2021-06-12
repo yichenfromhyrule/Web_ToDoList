@@ -1,14 +1,13 @@
 import React from 'react';
 import "./Profile.css";
 import Photo from "./../Photo/Photo";
-import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
+import CalendarItem from "../CalenderItem/CalenderItem";
 
 function Profile() {
     return (
         <div className="profileContainer">
             <Photo />
-            <Calendar />
+            <CalendarItem />
         </div>
     )
 }
